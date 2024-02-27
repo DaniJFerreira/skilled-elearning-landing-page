@@ -1,7 +1,8 @@
-
+@use "./scss/variables";
+@use "./scss/reset";
 
 .container {
-    background-color: var(--FFFFFF, #fff);
+    background-color: variables.$bg-white;
     display: flex;
     flex-direction: column;
   }
@@ -38,7 +39,7 @@
     max-width: 100%;
   }
   .div-2 {
-    color: var(--13183F, #13183f);
+    color: variables.$primay-dark-blur;
     font-feature-settings: "clig" off, "liga" off;
     margin-top: 202px;
     font: 800 56px Plus Jakarta Sans, -apple-system, Roboto, Helvetica,
@@ -46,22 +47,22 @@
   }
 
   .div-3 {
-    color: var(--83869A, #83869a);
+    color: variables.$primary-grey;
     font-feature-settings: "clig" off, "liga" off;
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     font-weight: 400;
     line-height: 28px;
     margin-top: 37px;
   }
 
   .button {
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     border-radius: 31.5px;
-    background: linear-gradient(0deg, #F02AA6 0%, #FF6F48 100%);
+    background: variables.$bg-linear-pink;
     align-self: start;
     margin-top: 43px;
     justify-content: center;
-    color: var(--FFFFFF, #fff);
+    color: variables.$primary-white;
     font-weight: 700;
     white-space: nowrap;
     line-height: 156%;
@@ -72,7 +73,7 @@
     display: flex;
     line-height: normal;
     width: 56%;
-    margin-left: 20px;
+    margin-left: 150px;
   }
 
   .div-4 {
@@ -85,13 +86,119 @@
     flex-grow: 1;
     align-items: end;
     font-size: 18px;
-    color: var(--FFFFFF, #fff);
+    color: variables.$primary-white;
     font-weight: 700;
     white-space: nowrap;
     line-height: 156%;
     padding: 24px 60px 50px;
   }
- 
+
+  .cardOne{
+    background-color: #fff;
+    border-radius: 20px;
+    height: 120px;
+    position: absolute;
+    width: 199px;
+    margin-left: 20px;
+    margin-top: 560px;
+    padding: 25px;
+    box-shadow: -15px 44px 84px 0px #afb2c8;
+    z-index: 1;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+
+    h5{
+      font-family: variables.$ff-Plus-Jakarta-Sans;
+      font-weight: 600;
+      color: variables.$primary-grey;
+    }
+    h1{
+      font-family: variables.$ff-Plus-Jakarta-Sans;
+      font-weight: 800;
+      color: variables.$primary-black;
+      padding-top: 5px;
+      font-size: 2.2rem;
+    }
+  }
+
+  // @keyframes myAnim {
+  //   0% {
+  //     transform: scale(0);
+  //   }
+  
+  //   100% {
+  //     transform: scale(1);
+  //   }
+  // }
+  @keyframes myAnim {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 0;
+      transform: scale(0);
+    }
+  
+    38% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+      transform: scale(1);
+    }
+  
+    55% {
+      animation-timing-function: ease-in;
+      transform: scale(0.7);
+    }
+  
+    72% {
+      animation-timing-function: ease-out;
+      transform: scale(1);
+    }
+  
+    81% {
+      animation-timing-function: ease-in;
+      transform: scale(0.84);
+    }
+  
+    89% {
+      animation-timing-function: ease-out;
+      transform: scale(1);
+    }
+  
+    95% {
+      animation-timing-function: ease-in;
+      transform: scale(0.95);
+    }
+  
+    100% {
+      animation-timing-function: ease-out;
+      transform: scale(1);
+    }
+  }
+
+  .cardTwo{
+    position: absolute;
+    background-color: #fff;
+    border-radius: 20px;
+    height: 120px;
+    width: 155px;
+    margin-left: 370px;
+    margin-top: 350px;
+    padding: 25px;
+    box-shadow: 24px 21px 54px 0px #83869A;
+    z-index: 1;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+    h5{
+      font-family: variables.$ff-Plus-Jakarta-Sans;
+      font-weight: 600;
+      color: variables.$primary-grey;
+    }
+    h1{
+      font-family: variables.$ff-Plus-Jakarta-Sans;
+      font-weight: 800;
+      color: variables.$primary-black;
+      padding-top: 5px;
+      font-size: 2.2rem;
+    }
+  }
+
   .img-hero {
     position: absolute;
     inset: 0;
@@ -102,17 +209,17 @@
   }
   .button-2 {
     position: relative;
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     border-radius: 28px;
-    background-color: var(--13183F, #13183f);
+    background-color: variables.$primay-dark-blur;
     margin-right: 105px;
-    color: #fff;
+    color: variables.$primary-white;
     justify-content: center;
     padding: 21px 34px;
   }
 
   .botton-section {
-    background: linear-gradient(180deg, #fff 0%, #f0f1ff 100%);
+    background: variables.$bg-linear-light;
     display: flex;
     margin-top: 46px;
     width: 100%;
@@ -142,11 +249,11 @@
     font-feature-settings: "clig" off, "liga" off;
     width: 100%;
     border-radius: 15px;
-    background: linear-gradient(0deg, #F02AA6 0%, #FF6F48 100%);
+    background: variables.$bg-linear-pink;
     flex-grow: 1;
     justify-content: center;
     align-items: start;
-    color: var(--FFFFFF, #fff);
+    color: variables.$primary-white;
     padding: 73px 32px 50px;
     font: 800 32px/40px Plus Jakarta Sans, -apple-system, Roboto, Helvetica,
       sans-serif;
@@ -161,7 +268,7 @@
   .box-animation {
     border-radius: 15px;
     box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
-    background-color: var(--FFFFFF, #fff);
+    background-color: variables.$primary-white;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
@@ -179,24 +286,24 @@
     margin-top: -24px;
   }
   .div-5 {
-    color: var(--13183F, #13183f);
+    color: variables.$primay-dark-blur;
     font-feature-settings: "clig" off, "liga" off;
     margin-top: 39px;
     font: 800 24px Plus Jakarta Sans, -apple-system, Roboto, Helvetica,
       sans-serif;
   }
   .div-6 {
-    color: var(--83869A, #83869a);
+    color: variables.$primary-grey;
     font-feature-settings: "clig" off, "liga" off;
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     font-weight: 400;
     line-height: 28px;
     margin-top: 36px;
   }
   .div-7 {
-    color: var(--F74780, #f74780);
+    color: variables.$primary-magento;
     font-feature-settings: "clig" off, "liga" off;
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     font-weight: 700;
     line-height: 156%;
     margin-top: 38px;
@@ -211,13 +318,13 @@
   .box-design {
     border-radius: 15px;
     box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
-    background-color: var(--FFFFFF, #fff);
+    background-color: variables.$primary-white;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     font-size: 18px;
     width: 100%;
-    padding: 0 78px 47px 32px;
+    padding: 0 32px 47px;;
   }
   .icon-design {
     aspect-ratio: 1;
@@ -228,24 +335,24 @@
     margin-top: -24px;
   }
   .div-8 {
-    color: var(--13183F, #13183f);
+    color: variables.$primay-dark-blur;
     font-feature-settings: "clig" off, "liga" off;
     margin-top: 39px;
     font: 800 24px Plus Jakarta Sans, -apple-system, Roboto, Helvetica,
       sans-serif;
   }
   .div-9 {
-    color: var(--83869A, #83869a);
+    color: variables.$primary-grey;
     font-feature-settings: "clig" off, "liga" off;
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     font-weight: 400;
     line-height: 28px;
     margin-top: 31px;
   }
   .div-10 {
-    color: var(--F74780, #f74780);
+    color: variables.$primary-magento;
     font-feature-settings: "clig" off, "liga" off;
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     font-weight: 700;
     line-height: 156%;
     margin-top: 66px;
@@ -263,7 +370,7 @@
   .box-photo {
     border-radius: 15px;
     box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
-    background-color: var(--FFFFFF, #fff);
+    background-color: variables.$primary-white;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
@@ -281,24 +388,24 @@
     margin-top: -24px;
   }
   .div-11 {
-    color: var(--13183F, #13183f);
+    color: variables.$primay-dark-blur;
     font-feature-settings: "clig" off, "liga" off;
     margin-top: 39px;
     font: 800 24px Plus Jakarta Sans, -apple-system, Roboto, Helvetica,
       sans-serif;
   }
   .div-12 {
-    color: var(--83869A, #83869a);
+    color: variables.$primary-grey;
     font-feature-settings: "clig" off, "liga" off;
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     font-weight: 400;
     line-height: 28px;
     margin-top: 31px;
   }
   .div-13 {
-    color: var(--F74780, #f74780);
+    color: variables.$primary-magento;
     font-feature-settings: "clig" off, "liga" off;
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     font-weight: 700;
     line-height: 156%;
     margin-top: 62px;
@@ -312,7 +419,7 @@
   .box-crypto {
     border-radius: 15px;
     box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
-    background-color: var(--FFFFFF, #fff);
+    background-color: variables.$primary-white;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
@@ -329,24 +436,24 @@
     margin-top: -24px;
   }
   .div-14 {
-    color: var(--13183F, #13183f);
+    color: variables.$primay-dark-blur;
     font-feature-settings: "clig" off, "liga" off;
     margin-top: 39px;
     font: 800 24px Plus Jakarta Sans, -apple-system, Roboto, Helvetica,
       sans-serif;
   }
   .div-15 {
-    color: var(--83869A, #83869a);
+    color: variables.$primary-grey;
     font-feature-settings: "clig" off, "liga" off;
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     font-weight: 400;
     line-height: 28px;
     margin-top: 31px;
   }
   .div-16 {
-    color: var(--F74780, #f74780);
+    color: variables.$primary-magento;
     font-feature-settings: "clig" off, "liga" off;
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     font-weight: 700;
     line-height: 156%;
     margin-top: 38px;
@@ -360,7 +467,7 @@
   .box-business {
     border-radius: 15px;
     box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
-    background-color: var(--FFFFFF, #fff);
+    background-color: variables.$primary-white;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
@@ -377,36 +484,36 @@
     margin-top: -24px;
   }
   .div-17 {
-    color: var(--13183F, #13183f);
+    color: variables.$primay-dark-blur;
     font-feature-settings: "clig" off, "liga" off;
     margin-top: 39px;
     font: 800 24px Plus Jakarta Sans, -apple-system, Roboto, Helvetica,
       sans-serif;
   }
   .div-18 {
-    color: var(--83869A, #83869a);
+    color: variables.$primary-grey;
     font-feature-settings: "clig" off, "liga" off;
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     font-weight: 400;
     line-height: 28px;
     margin-top: 36px;
   }
   .div-19 {
-    color: var(--F74780, #f74780);
+    color: variables.$primary-magento;
     font-feature-settings: "clig" off, "liga" off;
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     font-weight: 700;
     line-height: 156%;
     margin-top: 38px;
   }
   .footer-section {
-    background-color: var(--13183F, #13183f);
+    background-color: variables.$primay-dark-blur;
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    color: var(--FFFFFF, #fff);
+    color: variables.$primary-white;
     font-weight: 700;
     white-space: nowrap;
     line-height: 156%;
@@ -428,9 +535,9 @@
     margin: auto 0;
   }
   .footer-button {
-    font-family: Plus Jakarta Sans, sans-serif;
+    font-family: variables.$ff-Plus-Jakarta-Sans;
     border-radius: 28px;
-    background: linear-gradient(180deg, #4851ff -54.32%, #f02aa6 100%);
+    background: variables.$bg-linear-blue;
     justify-content: center;
     padding: 21px 32px;
   }
