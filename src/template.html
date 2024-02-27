@@ -10,52 +10,50 @@
 </head>
 <body>
   <header class="container">
-    <div class="hero-section">
-      <nav class="navegation">
+    <section class="hero-section" aria-label="main-heading">
+      <nav class="navegation" aria-label="Main navigation">
         <img
         loading="lazy"
         src="../public/assets/logo-dark.svg"
+        alt="Company logo"
         class="img-logo-dark"
         />
-        <button class="button-2">Get Started</button>
+        <button class="button-2" role="buton">Get Started</button>
       </nav>
       <div class="column-header">
         <div class="column">
           <div class="hero-title">
-            <div class="div-2">
-              <h1>Maximize skill,
+            <div class="div-2" aria-label="title">
+              <h1 >Maximize skill,
                 minimize budget</h1>
             </div>
-            <div class="div-3">
+            <div class="div-3" aria-label="content">
               <p>Our modern courses across a range of in-demand skills will give you
               the knowledge you need to live the life you want.</p>
             </div>
-            <button class="button">Get Started</button>
+            <button class="button" role="button">Get Started</button>
           </div>
         </div>
         <div class="column-2">
-          <div class="div-4">
-            <!-- <img
-              loading="lazy"
-              src="../public/assets/image-hero-desktop_cleanup.png"
-              class="img-hero"
-            /> -->
+          <div class="div-4" aria-label="hero image">
           </div>
         </div>
       </div>
+    </section>
     </header>
-    <div class="botton-section">
-      <div class="articles">
+    <section class="botton-section" aria-label="main-heading">
+      <article class="articles">
         <div class="top-column">
           <div class="div">
             <div class="column-3">
-              <div class="caption">Check out our most popular courses!</div>
+              <caption class="caption" alt="courses-heading" >Check out our most popular courses!</caption>
             </div>
             <div class="column-4">
               <div class="box-animation">
                 <img
                   loading="lazy"
                   src="../public/assets/icon-animation.svg"
+                  alt="Animation icon"
                   class="icon-animation"
                 />
                 <div class="div-5">Animation</div>
@@ -71,6 +69,7 @@
                 <img
                   loading="lazy"
                   src="../public/assets/icon-design.svg"
+                  alt="design icon"
                   class="icon-design"
                 />
                 <div class="div-8">Design</div>
@@ -82,7 +81,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </article>
         <div class="botton-column">
           <div class="div">
             <div class="column-6">
@@ -90,6 +89,7 @@
                 <img
                   loading="lazy"
                   src="../public/assets/icon-photography.svg"
+                  alt="photos icon"
                   class="icon-photo"
                 />
                 <div class="div-11">Photography</div>
@@ -105,6 +105,7 @@
                 <img
                   loading="lazy"
                   src="../public/assets/icon-crypto.svg"
+                  alt="crypto icon"
                   class="icon-crypto"
                 />
                 <div class="div-14">Crypto</div>
@@ -120,6 +121,7 @@
                 <img
                   loading="lazy"
                   src="../public/assets/icon-business.svg"
+                  alt="business icon"
                   class="icon-business"
                 />
                 <div class="div-17">Business</div>
@@ -133,17 +135,18 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer-section">
-      <div class="box-footer">
+    </section>
+    <footer class="footer-section">
+      <nav class="box-footer" aria-label="Footer navigation">
         <img
           loading="lazy"
           src="../public/assets/logo-light.svg"
+          alt="Light version of company logo"
           class="img-logo-ligth"
         />
-        <button class="footer-button">Get Started</button>
-      </div>
-    </div>
+        <button class="footer-button" role="button">Get Started</button>
+      </nav>
+    </footer>
   </div>
 </body>
 </html>
