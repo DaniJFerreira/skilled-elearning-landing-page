@@ -90,13 +90,13 @@ module.exports = {
     ],
   },
 
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
-    compress: true,
-    port: 3000,
-  },
+  // devServer: {
+  //   static: {
+  //     directory: path.join(__dirname, 'dist'),
+  //   },
+  //   compress: true,
+  //   port: 3000,
+  // },
   
   devtool: mode === "development" ? 'eval-source-map' : 'source-map',
 };
