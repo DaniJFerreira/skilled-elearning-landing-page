@@ -1,9 +1,31 @@
 import "./main.scss";
 import anime from './Utils/animees.js'
 
+let topColumn = document.querySelector('.top-column');
+let bottonColumn = document.querySelector('.botton-column');
 const card = document.querySelector(".column-2");
 let newCardOne = document.createElement("div");
 let newCardTwo = document.createElement("div");
+
+const handleScroll = () => {
+    if (window.scrollY > 5) {
+        // Update styles directly
+        topColumn.style.animation = 'scrollAnim 2s ease 0s 1 normal forwards';
+        topColumn.style.visibility = 'visible'; // Set visibility to visible
+
+        setTimeout(() => {
+            bottonColumn.style.animation = 'scrollAnim 2s ease 0s 1 normal forwards';
+            bottonColumn.style.visibility = 'visible'; // Set visibility to visible
+        }, 400);
+    } else {
+        // Reset animation and set visibility to hidden when not scrolled
+        topColumn.style.animation = '';
+        topColumn.style.visibility = 'hidden';
+        bottonColumn.style.animation = '';
+        bottonColumn.style.visibility = 'hidden';
+    }
+};
+
 
 let animationProps ={
     prop1: '0',
@@ -51,4 +73,5 @@ startAnimation();
     }
 });
 
-console.log("hello world!");
+window.addEventListener('scroll', handleScroll);
+
