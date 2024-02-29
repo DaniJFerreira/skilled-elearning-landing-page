@@ -29,7 +29,7 @@ const handleScroll = () => {
 
 let animationProps ={
     prop1: '0',
-    prop2: '0'
+    prop2: 0
 }
 
 document.addEventListener('DOMContentLoaded', function(event) {
@@ -55,9 +55,9 @@ startAnimation();
         anime({
             targets: animationProps,
             prop1: '1451',
-            prop2: '29k',
+            prop2: '29',
             easing: 'linear',
-            round: 2,
+            round: 1,
             update: function() {
                 newCardOne.innerHTML = `
                     <h5>Course Hours</h5>
@@ -66,7 +66,7 @@ startAnimation();
                
                 newCardTwo.innerHTML = `
                     <h5>Members</h5>
-                    <h1>${animationProps.prop2}</h1>
+                    <h1>${animationProps.prop2}k</h1>
                 `;
             }
         });
