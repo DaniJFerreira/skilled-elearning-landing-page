@@ -2,38 +2,49 @@ import "./main.scss";
 import anime from './Utils/animees.js'
 
 let topColumn = document.querySelector('.top-column');
-let bottonColumn = document.querySelector('.botton-column');
+let bottomColumn = document.querySelector('.botton-column');
 const card = document.querySelector(".column-2");
 let newCardOne = document.createElement("div");
 let newCardTwo = document.createElement("div");
+let scrollTimeout;
+
+const animateColumn = (column, animation, visibility) => {
+    column.style.animation = animation;
+    column.style.visibility = visibility;
+};
 
 const handleScroll = () => {
-    if (window.scrollY > 5) {
-        // Update styles directly
-        topColumn.style.animation = 'scrollAnim 2s ease 0s 1 normal forwards';
-        topColumn.style.visibility = 'visible'; // Set visibility to visible
+    const shouldAnimate = window.scrollY > 5;
+    const isWidthValid = window.innerWidth < 991;
+    const animationStyle = 'scrollAnim 2s ease 0s 1 normal forwards';
+    const visibleStyle = 'visible';
+    const hiddenStyle = 'hidden';
 
-        setTimeout(() => {
-            bottonColumn.style.animation = 'scrollAnim 2s ease 0s 1 normal forwards';
-            bottonColumn.style.visibility = 'visible'; // Set visibility to visible
+    clearTimeout(scrollTimeout);
+
+    if (shouldAnimate) {
+        animateColumn(topColumn, animationStyle, visibleStyle);
+        scrollTimeout = setTimeout(() => {
+            animateColumn(bottomColumn, animationStyle, visibleStyle);
         }, 400);
-    } else {
-        // Reset animation and set visibility to hidden when not scrolled
-        topColumn.style.animation = '';
-        topColumn.style.visibility = 'hidden';
-        bottonColumn.style.animation = '';
-        bottonColumn.style.visibility = 'hidden';
+
+    }else if (shouldAnimate && isWidthValid) {
+            scrollTimeout = setTimeout(() => {
+                animateColumn(bottomColumn, animationStyle, visibleStyle);
+            }, 1);
+        } else {
+        animateColumn(bottomColumn, '', hiddenStyle);
+        animateColumn(topColumn, '', hiddenStyle);
     }
 };
 
-
 let animationProps ={
     prop1: '0',
-    prop2: 0
+    prop2: '0'
 }
 
 document.addEventListener('DOMContentLoaded', function(event) {
-    // Add the card elements with their initial content and classes.
+
     newCardOne.classList.add("cardOne");
     newCardOne.innerHTML = `
         <h5>Course Hours</h5>
@@ -55,7 +66,7 @@ startAnimation();
         anime({
             targets: animationProps,
             prop1: '1451',
-            prop2: '29',
+            prop2: '29k',
             easing: 'linear',
             round: 1,
             update: function() {
@@ -66,7 +77,7 @@ startAnimation();
                
                 newCardTwo.innerHTML = `
                     <h5>Members</h5>
-                    <h1>${animationProps.prop2}k</h1>
+                    <h1>${animationProps.prop2}</h1>
                 `;
             }
         });
